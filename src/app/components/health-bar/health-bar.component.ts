@@ -8,19 +8,19 @@ import { Component } from '@angular/core';
   styleUrl: './health-bar.component.scss'
 })
 export class HealthBarComponent {
-  public totalHealth: number = 100
-  public actualHealth: number = this.totalHealth
+  public totalHealth: number = 100;
+  public actualHealth: number = this.totalHealth;
 
   set TotalHealth(newTotalHealth: number){
     this.totalHealth = newTotalHealth;
   }
-  get TotalHealth(){
+  get TotalHealth(): number{
     return this.totalHealth;
   }
-  set ActualHealth(newActualHealth:number){
+  set ActualHealth(newActualHealth: number){
     this.actualHealth = newActualHealth;
   }
-  get Actualhealth(){
+  get Actualhealth(): number{
     return this.actualHealth
   }
 }
