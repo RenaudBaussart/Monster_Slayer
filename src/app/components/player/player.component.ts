@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, numberAttribute } from '@angular/core';
 import { PlayerHealthBarComponent } from '../player-health-bar/player-health-bar.component';
 import { CombatCoreService } from '../../services/combat-core.service';
 
@@ -13,6 +13,14 @@ export class PlayerComponent {
   combatCoreService = inject(CombatCoreService);
   attack() {
     console.log('attack');
-    this.combatCoreService.UpdateCurrentPlayerHealth(-10);
+    this.combatCoreService.combatHandler('Attack', -20);
+  }
+  counter(){
+    console.log('counter');
+    this.combatCoreService.combatHandler('Counter', 0);
+  }
+  heal(){
+    console.log('Heal');
+    this.combatCoreService.combatHandler('Heal', 20);
   }
 }
