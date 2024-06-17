@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './attack-btn.component.html',
-  styleUrl: './attack-btn.component.scss'
+  styleUrl: './attack-btn.component.scss',
 })
-export class AttackBtnComponent {
-
-}
+export class AttackBtnComponent {}
