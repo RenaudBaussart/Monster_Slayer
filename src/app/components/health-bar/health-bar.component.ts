@@ -23,4 +23,7 @@ export class HealthBarComponent {
   get Actualhealth(): number{
     return this.actualHealth
   }
+  get healthPercentage(): number {
+    return (this.actualHealth / this.totalHealth) * 100;
+  }
 }
