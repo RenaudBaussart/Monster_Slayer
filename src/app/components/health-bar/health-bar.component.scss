@@ -1,8 +1,14 @@
 $healthbar-color: green;
+$health-texte-color: black;
 
+.healthpoint{
+    font-size: 1.5rem;
+    color: $health-texte-color;
+}
 .health-bar {
-    width: 200px;
-    height: 20px;
+    margin: 4px;
+    width: 100%;
+    height: 100%;
     background-color: #ccc;
     text-align: center;
   }
