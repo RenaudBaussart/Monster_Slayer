@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HealthBarComponent } from './health-bar.component';
+import { PlayerHealthBarComponent } from './player-health-bar.component';
 
-describe('HealthBarComponent', () => {
-  let component: HealthBarComponent;
-  let fixture: ComponentFixture<HealthBarComponent>;
+describe('PlayerHealthBarComponent', () => {
+  let component: PlayerHealthBarComponent;
+  let fixture: ComponentFixture<PlayerHealthBarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HealthBarComponent]
+      imports: [PlayerHealthBarComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HealthBarComponent);
+    fixture = TestBed.createComponent(PlayerHealthBarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
