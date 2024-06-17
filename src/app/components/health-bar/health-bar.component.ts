@@ -8,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrl: './health-bar.component.scss'
 })
 export class HealthBarComponent {
+  public totalHealth: number = 100
+  public actualHealth: number = this.totalHealth
+
 
 }
