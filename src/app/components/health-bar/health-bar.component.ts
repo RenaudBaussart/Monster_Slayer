@@ -20,4 +20,7 @@ export class HealthBarComponent {
   set ActualHealth(newActualHealth:number){
     this.actualHealth = newActualHealth;
   }
+  get Actualhealth(){
+    return this.actualHealth
+  }
 }
