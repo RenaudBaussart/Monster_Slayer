@@ -10,5 +10,6 @@ import { Component } from '@angular/core';
 export class PlayerComponent {
   attack() {
     console.log('attack');
+    // Ajouter l'action d'attaque
   }
 }
