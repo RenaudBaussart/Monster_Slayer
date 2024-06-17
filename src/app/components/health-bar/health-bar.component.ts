@@ -17,4 +17,7 @@ export class HealthBarComponent {
   get TotalHealth(){
     return this.totalHealth;
   }
+  set ActualHealth(newActualHealth:number){
+    this.actualHealth = newActualHealth;
+  }
 }
