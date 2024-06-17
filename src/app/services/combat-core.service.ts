@@ -51,6 +51,7 @@ export class CombatCoreService {
 
   combatHandler(actionType: string, actionValue: number){
     let actionOfPnj = this.pnjCombatLogicService.pnjAction();
+
     //handle error for both action of the player and pnj;
     if (typeof actionType !== 'string' ){
       alert('Error in the player action(go see in the player.components.ts)');
@@ -76,12 +77,15 @@ export class CombatCoreService {
       else if(actionOfPnj.action === 'Counter' && actionType === 'Counter'){
         console.log('metapod intense look(you have both counter)')
       }
-
       else{
         //player action
         if(actionType === 'Heal'){
           console.log('You have heal yourself for ' + actionValue + ' !')
           this.UpdateCurrentPlayerHealth(actionValue)
+          if(this.playerHealth.current > this.playerHealth.max){
+            this.playerHealth.current = this.playerHealth.max;
+          }
+          
         }
         else if(actionType === 'Attack'){
           console.log('you have done ' + actionValue + ' damage to the ennemy !');
@@ -91,15 +95,17 @@ export class CombatCoreService {
         if(actionOfPnj.action === 'Heal'){
           console.log('NPC heal himself for ' + actionOfPnj.value + ' !')
           this.UpdateCurrentPnjHealth(actionOfPnj.value);
+
+          if(this.pnjHealth.current > this.pnjHealth.max){
+            this.pnjHealth.current = this.pnjHealth.max;
+          }
         }
         else if(actionOfPnj.action === 'Attack'){
           console.log('NPC done ' + actionOfPnj.value + ' damage to you !');
           this.UpdateCurrentPlayerHealth(actionOfPnj.value);
         }
       }
-
     }
-
   }    
 }
 
