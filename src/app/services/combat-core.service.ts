@@ -6,10 +6,9 @@ interface Entity {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CombatCoreService {
-
   playerHealth: Entity = {
     max: 100,
     current: 100,
@@ -19,7 +18,7 @@ export class CombatCoreService {
     max: 100,
     current: 100,
   };
-  
+
   //player health function
   get PlayerMaxHealth(): number {
     return this.playerHealth.max;
@@ -29,6 +28,10 @@ export class CombatCoreService {
   }
   get playerHealthPercentage(): number {
     return (this.playerHealth.current / this.playerHealth.max) * 100;
+  }
+
+  UpdateCurrentPlayerHealth(newHealth: number) {
+    this.playerHealth.current += newHealth;
   }
   //pnj health function
   get pnjMaxHealth(): number {
@@ -41,4 +44,7 @@ export class CombatCoreService {
     return (this.pnjHealth.current / this.pnjHealth.max) * 100;
   }
 
+  UpdateCurrentPnjHealth(newHealth: number) {
+    this.pnjHealth.current += newHealth;
+  }
 }
