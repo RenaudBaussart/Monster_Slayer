@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PlayerHealthBarComponent } from '../player-health-bar/player-health-bar.component';
+import { CombatCoreService } from '../../services/combat-core.service';
 
 @Component({
   selector: 'app-player',
@@ -9,8 +10,9 @@ import { PlayerHealthBarComponent } from '../player-health-bar/player-health-bar
   styleUrl: './player.component.scss',
 })
 export class PlayerComponent {
+  combatCoreService = inject(CombatCoreService);
   attack() {
     console.log('attack');
-    // Ajouter l'action d'attaque
+    this.combatCoreService.UpdateCurrentPlayerHealth(-10);
   }
 }
