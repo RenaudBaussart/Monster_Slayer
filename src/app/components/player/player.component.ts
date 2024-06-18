@@ -32,9 +32,8 @@ export class PlayerComponent {
   }
 
   attack() {
-    this.changeBackgroundImage(
-      '/res/player-model/Fantasy-Warrior/Sprites/Attack1_hero.gif',
-    );
+    let img = '/res/player-model/Fantasy-Warrior/Sprites/Attack1_hero.gif';
+    this.changeBackgroundImage(img);
     setTimeout(() => {
       console.log('Delayed for 1 second.');
       this.changeBackgroundImage(
