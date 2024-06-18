@@ -15,3 +15,10 @@ button {
         background-color: gray;
     }
 }
+
+.player-model-idle {
+    background-image: url(../../../../public/res/player-model/Fantasy-Warrior/Sprites/Idle_hero.gif);
+    background-position: center;
+    width: 400px;
+    height: 420px;
+}
