@@ -1,8 +1,6 @@
-.pnj-model {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    background: transparent url(../../../../public/res/pnj-model/Goblin/Idle.png) 0 0 no-repeat;
-    width: 150px;
-    height: 150px;
+.pnj-model-idle {
+    background-image: url(../../../../public/res/pnj-model/Goblin/Idle_goblin.gif);
+    background-position: center;
+    width: 400px;
+    height: 420px;
 }
