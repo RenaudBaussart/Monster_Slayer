@@ -1,4 +1,11 @@
-import { Component, inject, numberAttribute } from '@angular/core';
+import {
+  Component,
+  inject,
+  numberAttribute,
+  ViewChild,
+  ElementRef,
+  Renderer2,
+} from '@angular/core';
 import { PlayerHealthBarComponent } from '../player-health-bar/player-health-bar.component';
 import { CombatCoreService } from '../../services/combat-core.service';
 import { DeathService } from '../../services/death.service';
@@ -10,19 +17,55 @@ import { DeathService } from '../../services/death.service';
   templateUrl: './player.component.html',
   styleUrl: './player.component.scss',
 })
-
 export class PlayerComponent {
+  @ViewChild('playerModel', { static: false }) playerModel!: ElementRef;
+
+  renderer = inject(Renderer2);
   deathService = inject(DeathService);
   combatCoreService = inject(CombatCoreService);
-  attack() {
-    console.log('attack');
-    this.combatCoreService.combatHandler('Attack', -20);
+  // attack() {
+  //   const parent = this.playerModel.nativeElement.parentNode;
+  //   this.renderer.removeChild(parent, this.playerModel.nativeElement);
+  //   const newElement = this.renderer.createElement('div');
+  //   this.renderer.addClass(newElement, 'player-model-attack');
+  //   this.renderer.appendChild(parent, newElement);
+  //   this.playerModel.nativeElement = newElement;
+
+  //   setTimeout(() => {
+  //     const parent = this.playerModel.nativeElement.parentNode;
+  //     this.renderer.removeChild(parent, this.playerModel.nativeElement);
+  //     const newElement = this.renderer.createElement('div');
+  //     this.renderer.addClass(newElement, 'player-model-idle');
+  //     this.renderer.appendChild(parent, newElement);
+  //     this.playerModel.nativeElement = newElement;
+  //     this.combatCoreService.combatHandler('Attack', -20);
+  //   }, 1200);
+  // }
+  changeBackgroundImage(url: string) {
+    this.renderer.setStyle(
+      this.playerModel.nativeElement,
+      'background-image',
+      `url(${url})`,
+    );
   }
-  counter(){
+
+  attack() {
+    this.changeBackgroundImage(
+      '/res/player-model/Fantasy-Warrior/Sprites/Attack1_hero.gif',
+    );
+    setTimeout(() => {
+      console.log('Delayed for 1 second.');
+      this.changeBackgroundImage(
+        '/res/player-model/Fantasy-Warrior/Sprites/Idle_hero.gif',
+      );
+      this.combatCoreService.combatHandler('Attack', -20);
+    }, 1200);
+  }
+  counter() {
     console.log('counter');
     this.combatCoreService.combatHandler('Counter', 0);
   }
-  heal(){
+  heal() {
     console.log('Heal');
     this.combatCoreService.combatHandler('Heal', 20);
   }

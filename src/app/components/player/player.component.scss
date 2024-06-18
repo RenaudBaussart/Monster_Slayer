@@ -17,15 +17,29 @@ button {
     }
 }
 
+.player-model-attack {
+    // animation: 1s steps(7) infinite;
+    background-position: 50% 45%;
+    // scale: 2;
+    width: 800px;
+    height: 426px;
+}
+
+@keyframes idle {
+    100% {
+        background-position: -3402px, 0;
+    }
+}
+
 .player-model-idle {
     background-image: url(../../../../public/res/player-model/Fantasy-Warrior/Sprites/Idle_hero.gif);
     background-position: 50% 45%;
-    width: 400px;
+    width: 800px;
     height: 420px;
 }
 
 .player {
-    max-width: 600px;
+    max-width: 800px;
 }
 
 .health-bar-container {
