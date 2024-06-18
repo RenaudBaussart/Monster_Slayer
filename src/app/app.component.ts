@@ -4,6 +4,7 @@ import { PnjHealthBarComponent } from './components/pnj-health-bar/pnj-health-ba
 import { PlayerHealthBarComponent } from './components/player-health-bar/player-health-bar.component';
 import { PlayerComponent } from './components/player/player.component';
 import { PnjComponent } from './components/pnj/pnj.component';
+import { CombatlogComponent } from './components/combatlog/combatlog.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { PnjComponent } from './components/pnj/pnj.component';
     PlayerHealthBarComponent,
     PlayerComponent,
     PnjComponent,
+    CombatlogComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

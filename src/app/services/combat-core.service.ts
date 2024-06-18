@@ -1,6 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { PnjCombatLogicService } from './pnj-combat-logic.service';
 import { DeathService } from './death.service';
+import { CombatlogService } from './combatlog.service';
+import { log } from 'console';
+
 interface Entity {
   max: number;
   current: number;
@@ -12,6 +15,7 @@ interface Entity {
 export class CombatCoreService {
   pnjCombatLogicService = inject(PnjCombatLogicService);
   deathService = inject(DeathService);
+  logService = inject(CombatlogService);
 
   playerHealth: Entity = {
     max: 100,
@@ -72,36 +76,40 @@ export class CombatCoreService {
     //handle special combat counter case
     else if(typeof actionOfPnj === 'object'){
       if(actionType === "Attack" && actionOfPnj.action ==='Counter'){
-        console.log('you have attacked but the npc counter and do ' + actionValue +' damage !');
+        this.logService.newLogs('you have attacked but the npc counter and do ' + actionValue +' damage !');
         this.UpdateCurrentPlayerHealth(actionValue);
       }
 
       else if( actionType === 'Counter' && actionOfPnj.action === 'Attack' ){
-        console.log('the npc attack but you counter with' + actionOfPnj.value + ' damage !');
+        this.logService.newLogs('the npc attack but you counter with' + actionOfPnj.value + ' damage !');
         this.UpdateCurrentPnjHealth(actionOfPnj.value);
       }
 
       else if(actionOfPnj.action === 'Counter' && actionType === 'Counter'){
-        console.log('metapod intense look(you have both counter)')
+        this.logService.newLogs('metapod intense look(you have both counter)')
       }
       //handle all other case
       else{
         //player action
         if(actionType === 'Heal'){
-          console.log('You have heal yourself for ' + actionValue + ' !')
+          this.logService.newLogs('You have heal yourself for ' + actionValue + ' !');
+
           this.UpdateCurrentPlayerHealth(actionValue)
+
           if(this.playerHealth.current > this.playerHealth.max){
             this.playerHealth.current = this.playerHealth.max;
           }
           
         }
         else if(actionType === 'Attack'){
-          console.log('you have done ' + actionValue + ' damage to the ennemy !');
+          this.logService.newLogs('you have done ' + actionValue + ' damage to the ennemy !');
+
           this.UpdateCurrentPnjHealth(actionValue)
         }
         //pnj action
         if(actionOfPnj.action === 'Heal'){
-          console.log('NPC heal himself for ' + actionOfPnj.value + ' !')
+          this.logService.newLogs('NPC heal himself for ' + actionOfPnj.value + ' !');
+
           this.UpdateCurrentPnjHealth(actionOfPnj.value);
 
           if(this.pnjHealth.current > this.pnjHealth.max){
@@ -109,7 +117,7 @@ export class CombatCoreService {
           }
         }
         else if(actionOfPnj.action === 'Attack'){
-          console.log('NPC done ' + actionOfPnj.value + ' damage to you !');
+          this.logService.newLogs('NPC done ' + actionOfPnj.value + ' damage to you !');
           this.UpdateCurrentPlayerHealth(actionOfPnj.value);
         }
       }
