@@ -1,0 +1,10 @@
+$combatlogBgColor : rgb(0, 0, 0);
+.combatLogContainer{
+    background-color: $combatlogBgColor;
+}
+.logsContainer{
+
+    li{
+        font-size: 18px;
+    }
+}
