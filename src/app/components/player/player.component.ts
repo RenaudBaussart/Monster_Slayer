@@ -23,24 +23,6 @@ export class PlayerComponent {
   renderer = inject(Renderer2);
   deathService = inject(DeathService);
   combatCoreService = inject(CombatCoreService);
-  // attack() {
-  //   const parent = this.playerModel.nativeElement.parentNode;
-  //   this.renderer.removeChild(parent, this.playerModel.nativeElement);
-  //   const newElement = this.renderer.createElement('div');
-  //   this.renderer.addClass(newElement, 'player-model-attack');
-  //   this.renderer.appendChild(parent, newElement);
-  //   this.playerModel.nativeElement = newElement;
-
-  //   setTimeout(() => {
-  //     const parent = this.playerModel.nativeElement.parentNode;
-  //     this.renderer.removeChild(parent, this.playerModel.nativeElement);
-  //     const newElement = this.renderer.createElement('div');
-  //     this.renderer.addClass(newElement, 'player-model-idle');
-  //     this.renderer.appendChild(parent, newElement);
-  //     this.playerModel.nativeElement = newElement;
-  //     this.combatCoreService.combatHandler('Attack', -20);
-  //   }, 1200);
-  // }
   changeBackgroundImage(url: string) {
     this.renderer.setStyle(
       this.playerModel.nativeElement,
