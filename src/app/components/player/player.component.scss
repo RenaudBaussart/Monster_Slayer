@@ -10,6 +10,10 @@ button {
         cursor: pointer;
         background-color: darkred;
     }
+    &:disabled{
+        filter: blur(2px);
+        background-color: gray;
+    }
 }
 
 .player-model-idle {

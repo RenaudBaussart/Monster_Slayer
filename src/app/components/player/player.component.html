@@ -2,7 +2,7 @@
 <app-player-health-bar></app-player-health-bar>
 <div class="player-model-idle"></div>
 <section>
-    <button (click)="attack()">Attack</button>
-    <button (click)="counter()">Counter</button>
-    <button (click)="heal()">Heal</button>
+    <button (click)="attack()" [disabled]="deathService.checkIfDead">Attack</button>
+    <button (click)="counter()" [disabled]="deathService.checkIfDead">Counter</button>
+    <button (click)="heal()" [disabled]="deathService.checkIfDead">Heal</button>
 </section>
