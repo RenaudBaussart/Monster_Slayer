@@ -5,6 +5,7 @@ import { PlayerHealthBarComponent } from './components/player-health-bar/player-
 import { PlayerComponent } from './components/player/player.component';
 import { PnjComponent } from './components/pnj/pnj.component';
 import { CombatlogComponent } from './components/combatlog/combatlog.component';
+import { PlayerButtonComponent } from './components/player-button/player-button.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { CombatlogComponent } from './components/combatlog/combatlog.component';
     PlayerComponent,
     PnjComponent,
     CombatlogComponent,
+    PlayerButtonComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

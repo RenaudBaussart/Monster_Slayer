@@ -8,7 +8,7 @@ export class CombatlogService {
   logsArray: string[] = ['test'];
 
   newLogs(log: string){
-    if (this.logsArray.length > 9){
+    if (this.logsArray.length > 14){
       this.logsArray.pop();
     }
     this.logsArray.unshift(log);

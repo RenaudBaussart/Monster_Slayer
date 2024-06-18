@@ -9,6 +9,7 @@ import {
 import { PlayerHealthBarComponent } from '../player-health-bar/player-health-bar.component';
 import { CombatCoreService } from '../../services/combat-core.service';
 import { DeathService } from '../../services/death.service';
+import { PlayerButtonComponent } from '../player-button/player-button.component';
 
 @Component({
   selector: 'app-player',
