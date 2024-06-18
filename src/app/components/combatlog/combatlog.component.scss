@@ -1,0 +1,26 @@
+$combatlogBgColor : rgb(0, 0, 0);
+$fontLogColor : rgb(173, 255, 47);
+.combatLogContainer{
+    background-color: $combatlogBgColor;
+    border-right: solid 2px $fontLogColor;
+    border-top: solid 2px $fontLogColor;
+    border-bottom: solid 2px $fontLogColor;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    h3{
+        color: $fontLogColor;
+        text-align: center;
+    }
+
+}
+.logsContainer{
+
+    li{
+        font-size: 18px;
+        color: $fontLogColor;
+        text-shadow: 0px 0px 18px 7px rgba(173, 255, 47);
+    }
+}
