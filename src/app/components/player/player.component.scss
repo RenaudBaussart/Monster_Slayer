@@ -1,22 +1,3 @@
-button {
-    background-color: red;
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 10px 20px;
-    font-size: 32px;
-
-    &:hover {
-        cursor: pointer;
-        background-color: darkred;
-    }
-
-    &:disabled {
-        filter: blur(2px);
-        background-color: gray;
-    }
-}
-
 .player-model-idle {
     background-image: url(../../../../public/res/player-model/Fantasy-Warrior/Sprites/Idle_hero.gif);
     background-position: 50% 45%;
