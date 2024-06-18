@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { PnjCombatLogicService } from './pnj-combat-logic.service';
+import { DeathService } from './death.service';
 interface Entity {
   max: number;
   current: number;
@@ -9,8 +10,9 @@ interface Entity {
   providedIn: 'root',
 })
 export class CombatCoreService {
-  
   pnjCombatLogicService = inject(PnjCombatLogicService);
+  deathService = inject(DeathService);
+
   playerHealth: Entity = {
     max: 100,
     current: 100,
@@ -48,6 +50,11 @@ export class CombatCoreService {
 
   UpdateCurrentPnjHealth(newHealth: number) {
     this.pnjHealth.current += newHealth;
+  }
+
+  resetgame(){
+    this.pnjHealth.current = this.pnjHealth.max
+    this.playerHealth.current = this.playerHealth.max
   }
 
   combatHandler(actionType: string, actionValue: number){
@@ -107,7 +114,19 @@ export class CombatCoreService {
         }
       }
     }
-  }    
+    if(this.playerHealth.current <= 0){
+      if(this.deathService.IsDead('Player')){
+        this.resetgame();
+      }
+    }
+    else if (this.pnjHealth.current <= 0)
+    {
+      if(this.deathService.IsDead('NPC')){
+        this.resetgame()
+      }
+    }
+  }
+      
 }
 
 
