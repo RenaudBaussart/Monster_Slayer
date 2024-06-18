@@ -1,6 +1,7 @@
 import { Component, inject, numberAttribute } from '@angular/core';
 import { PlayerHealthBarComponent } from '../player-health-bar/player-health-bar.component';
 import { CombatCoreService } from '../../services/combat-core.service';
+import { DeathService } from '../../services/death.service';
 
 @Component({
   selector: 'app-player',
@@ -9,7 +10,9 @@ import { CombatCoreService } from '../../services/combat-core.service';
   templateUrl: './player.component.html',
   styleUrl: './player.component.scss',
 })
+
 export class PlayerComponent {
+  deathService = inject(DeathService);
   combatCoreService = inject(CombatCoreService);
   attack() {
     console.log('attack');
