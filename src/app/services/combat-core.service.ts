@@ -69,7 +69,7 @@ export class CombatCoreService {
         this.UpdateCurrentPlayerHealth(actionValue);
       }
 
-      else if(actionOfPnj.action === 'Counter' && actionType === 'Attack' ){
+      else if( actionType === 'Counter' && actionOfPnj.action === 'Attack' ){
         console.log('the npc attack but you counter with' + actionOfPnj.value + ' damage !');
         this.UpdateCurrentPnjHealth(actionOfPnj.value);
       }
