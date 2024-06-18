@@ -9,6 +9,7 @@ interface Entity {
   providedIn: 'root',
 })
 export class CombatCoreService {
+  
   pnjCombatLogicService = inject(PnjCombatLogicService);
   playerHealth: Entity = {
     max: 100,
@@ -51,7 +52,6 @@ export class CombatCoreService {
 
   combatHandler(actionType: string, actionValue: number){
     let actionOfPnj = this.pnjCombatLogicService.pnjAction();
-
     //handle error for both action of the player and pnj;
     if (typeof actionType !== 'string' ){
       alert('Error in the player action(go see in the player.components.ts)');
@@ -62,7 +62,7 @@ export class CombatCoreService {
       alert('Error in the pnj combat logic');
       return;
     }
-
+    //handle special combat counter case
     else if(typeof actionOfPnj === 'object'){
       if(actionType === "Attack" && actionOfPnj.action ==='Counter'){
         console.log('you have attacked but the npc counter and do ' + actionValue +' damage !');
@@ -77,6 +77,7 @@ export class CombatCoreService {
       else if(actionOfPnj.action === 'Counter' && actionType === 'Counter'){
         console.log('metapod intense look(you have both counter)')
       }
+      //handle all other case
       else{
         //player action
         if(actionType === 'Heal'){
