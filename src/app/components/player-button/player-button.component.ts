@@ -6,7 +6,7 @@ import { DeathService } from '../../services/death.service';
   standalone: true,
   imports: [],
   templateUrl: './player-button.component.html',
-  styleUrl: './player-button.component.scss'
+  styleUrl: './player-button.component.scss',
 })
 export class PlayerButtonComponent {
   deathService = inject(DeathService);
@@ -15,11 +15,11 @@ export class PlayerButtonComponent {
     console.log('attack');
     this.combatCoreService.combatHandler('Attack', -20);
   }
-  counter(){
+  counter() {
     console.log('counter');
     this.combatCoreService.combatHandler('Counter', 0);
   }
-  heal(){
+  heal() {
     console.log('Heal');
     this.combatCoreService.combatHandler('Heal', 20);
   }

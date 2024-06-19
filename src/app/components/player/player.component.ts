@@ -24,22 +24,25 @@ export class PlayerComponent {
   renderer = inject(Renderer2);
   deathService = inject(DeathService);
   combatCoreService = inject(CombatCoreService);
-  changeBackgroundImage(url: string) {
-    this.renderer.setStyle(
-      this.playerModel.nativeElement,
-      'background-image',
-      `url(${url})`,
-    );
+  resetGif(url: string) {
+    const element = this.playerModel.nativeElement;
+    const parent = element.parentNode;
+    this.renderer.removeChild(parent, element);
+
+    const newElement = this.renderer.createElement('div');
+    this.renderer.setStyle(newElement, 'background-image', `url(${url})`);
+    this.renderer.addClass(newElement, 'player-model-idle');
+    this.renderer.appendChild(parent, newElement);
+
+    // Update playerModel to the new element
+    this.playerModel = new ElementRef(newElement);
   }
 
   attack() {
-    let img = '/res/player-model/Fantasy-Warrior/Sprites/Attack1_hero.gif';
-    this.changeBackgroundImage(img);
+    this.resetGif('/res/player-model/Fantasy-Warrior/Sprites/Attack1_hero.gif');
     setTimeout(() => {
       console.log('Delayed for 1 second.');
-      this.changeBackgroundImage(
-        '/res/player-model/Fantasy-Warrior/Sprites/Idle_hero.gif',
-      );
+      this.resetGif('/res/player-model/Fantasy-Warrior/Sprites/Idle_hero.gif');
       this.combatCoreService.combatHandler('Attack', -20);
     }, 1200);
   }
