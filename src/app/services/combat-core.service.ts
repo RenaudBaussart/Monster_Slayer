@@ -60,6 +60,20 @@ export class CombatCoreService {
     this.pnjHealth.current = this.pnjHealth.max
     this.playerHealth.current = this.playerHealth.max
   }
+  deathTester() {
+    if(this.playerHealth.current <= 0){
+      if(this.deathService.IsDead('Player')){
+        
+        this.resetgame();
+      }
+    }
+    else if (this.pnjHealth.current <= 0)
+    {
+      if(this.deathService.IsDead('NPC')){
+        this.resetgame()
+      }
+    }
+  }
 
   combatHandler(actionType: string, actionValue: number){
     let actionOfPnj = this.pnjCombatLogicService.pnjAction();
@@ -122,19 +136,7 @@ export class CombatCoreService {
         }
       }
     }
-    if(this.playerHealth.current <= 0){
-      if(this.deathService.IsDead('Player')){
-        this.resetgame();
-      }
-    }
-    else if (this.pnjHealth.current <= 0)
-    {
-      if(this.deathService.IsDead('NPC')){
-        this.resetgame()
-      }
-    }
+    this.deathTester(); 
   }
-      
+  
 }
-
-
