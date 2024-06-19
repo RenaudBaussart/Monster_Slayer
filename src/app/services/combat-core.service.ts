@@ -3,6 +3,7 @@ import { PnjCombatLogicService } from './pnj-combat-logic.service';
 import { DeathService } from './death.service';
 import { CombatlogService } from './combatlog.service';
 import { log } from 'console';
+import { timeout } from 'rxjs';
 
 interface Entity {
   max: number;
@@ -35,6 +36,9 @@ export class CombatCoreService {
     return this.playerHealth.current;
   }
   get playerHealthPercentage(): number {
+    if((this.playerHealth.current / this.playerHealth.max) * 100 < 0){
+      return 0;
+    }
     return (this.playerHealth.current / this.playerHealth.max) * 100;
   }
   UpdateCurrentPlayerHealth(newHealth: number) {
@@ -49,6 +53,9 @@ export class CombatCoreService {
     return this.pnjHealth.current;
   }
   get pnjHealthPercentage(): number {
+    if((this.pnjHealth.current / this.pnjHealth.max) * 100 < 0){
+      return 0;
+    }
     return (this.pnjHealth.current / this.pnjHealth.max) * 100;
   }
 
@@ -136,7 +143,9 @@ export class CombatCoreService {
         }
       }
     }
-    this.deathTester(); 
+    setTimeout(() => {
+      this.deathTester();
+    }, 1); 
   }
   
 }
