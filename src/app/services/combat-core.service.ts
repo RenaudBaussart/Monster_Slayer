@@ -36,6 +36,9 @@ export class CombatCoreService {
     return this.playerHealth.current;
   }
   get playerHealthPercentage(): number {
+    if((this.playerHealth.current / this.playerHealth.max) * 100 < 0){
+      return 0;
+    }
     return (this.playerHealth.current / this.playerHealth.max) * 100;
   }
   UpdateCurrentPlayerHealth(newHealth: number) {
@@ -50,6 +53,9 @@ export class CombatCoreService {
     return this.pnjHealth.current;
   }
   get pnjHealthPercentage(): number {
+    if((this.pnjHealth.current / this.pnjHealth.max) * 100 < 0){
+      return 0;
+    }
     return (this.pnjHealth.current / this.pnjHealth.max) * 100;
   }
 
@@ -139,7 +145,7 @@ export class CombatCoreService {
     }
     setTimeout(() => {
       this.deathTester();
-    }, 0); 
+    }, 1); 
   }
   
 }
