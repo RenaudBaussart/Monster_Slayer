@@ -3,6 +3,7 @@ import { PnjCombatLogicService } from './pnj-combat-logic.service';
 import { DeathService } from './death.service';
 import { CombatlogService } from './combatlog.service';
 import { log } from 'console';
+import { timeout } from 'rxjs';
 
 interface Entity {
   max: number;
@@ -136,7 +137,9 @@ export class CombatCoreService {
         }
       }
     }
-    this.deathTester(); 
+    setTimeout(() => {
+      this.deathTester();
+    }, 0); 
   }
   
 }
