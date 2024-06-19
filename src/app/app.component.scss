@@ -1,21 +1,24 @@
 $neonGreen : rgb(125, 209, 0);
 $lightNeonGreen : rgb(204, 255, 126);
-.mainGrid{
+
+.mainGrid {
     padding-top: 20px;
     padding-bottom: 20px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(7, 1fr); 
+    grid-template-rows: repeat(7, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     justify-items: stretch;
     align-items: stretch;
     height: 98vh;
-    .area1 { 
-        grid-area: 1 / 1 / 7 / 2; 
+
+    .area1 {
+        grid-area: 1 / 1 / 7 / 2;
         margin-top: 5%;
     }
-    .area2 { 
+
+    .area2 {
         grid-area: 1 / 2 / 7 / 6;
         background-image: url(../../res/background/combat\ Background.gif);
         background-repeat: none;
@@ -23,12 +26,13 @@ $lightNeonGreen : rgb(204, 255, 126);
         background-position: 50% 70%;
         margin-right: 20px;
     }
-    .area3 { 
+
+    .area3 {
         grid-area: 7 / 2 / 8 / 6;
-        display: flex; 
+        display: flex;
         align-items: center;
         justify-content: center;
-    } 
+    }
 }
 
 .combat {
@@ -37,9 +41,10 @@ $lightNeonGreen : rgb(204, 255, 126);
     justify-content: center;
     align-items: end;
     gap: 50px;
-    padding:  20px;
+    padding: 20px;
 }
-.playerButtonContainer{
+
+.playerButtonContainer {
     display: flex;
     justify-content: center;
     align-items: center;

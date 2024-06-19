@@ -5,7 +5,7 @@ import { DeathService } from '../../services/death.service';
 @Component({
   selector: 'app-player-button',
   templateUrl: './player-button.component.html',
-  styleUrl: './player-button.component.scss'
+  styleUrl: './player-button.component.scss',
 })
 export class PlayerButtonComponent {
   deathService = inject(DeathService);
