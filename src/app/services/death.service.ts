@@ -9,6 +9,7 @@ export class DeathService {
   get checkIfDead(){
     return this.isSomeoneDead;
   }
+  
   IsDead(who : string){
     this.isSomeoneDead = true;
     this.logService.newLogs(who + ' is dead')

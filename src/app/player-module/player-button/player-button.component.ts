@@ -10,9 +10,12 @@ import { DeathService } from '../../services/death.service';
 export class PlayerButtonComponent {
   deathService = inject(DeathService);
   combatCoreService = inject(CombatCoreService);
+  randomNum(num : number){
+    return Math.floor(Math.random() * num);
+  }
   attack() {
     console.log('attack');
-    this.combatCoreService.combatHandler('Attack', -20);
+    this.combatCoreService.combatHandler('Attack', -this.randomNum(20));
   }
   counter() {
     console.log('counter');
@@ -20,6 +23,6 @@ export class PlayerButtonComponent {
   }
   heal() {
     console.log('Heal');
-    this.combatCoreService.combatHandler('Heal', 20);
+    this.combatCoreService.combatHandler('Heal', this.randomNum(20));
   }
 }
