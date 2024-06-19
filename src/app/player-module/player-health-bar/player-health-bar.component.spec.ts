@@ -8,7 +8,7 @@ describe('PlayerHealthBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PlayerHealthBarComponent]
+      declarations: [PlayerHealthBarComponent]
     })
     .compileComponents();
 

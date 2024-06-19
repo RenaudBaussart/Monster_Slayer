@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PnjHealthBarComponent } from './components/pnj-health-bar/pnj-health-bar.component';
-import { PlayerHealthBarComponent } from './components/player-health-bar/player-health-bar.component';
-import { PlayerComponent } from './components/player/player.component';
 import { PnjComponent } from './components/pnj/pnj.component';
 import { CombatlogComponent } from './components/combatlog/combatlog.component';
-import { PlayerButtonComponent } from './components/player-button/player-button.component';
+import { PlayerModule } from './player-module/player.module';
+
 
 @Component({
   selector: 'app-root',
@@ -13,11 +12,10 @@ import { PlayerButtonComponent } from './components/player-button/player-button.
   imports: [
     RouterOutlet,
     PnjHealthBarComponent,
-    PlayerHealthBarComponent,
-    PlayerComponent,
     PnjComponent,
     CombatlogComponent,
-    PlayerButtonComponent,
+    PlayerModule
+
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
