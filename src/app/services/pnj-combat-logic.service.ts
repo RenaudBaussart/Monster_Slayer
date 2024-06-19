@@ -4,25 +4,25 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PnjCombatLogicService {
-
-  pnjAction(){
-    let actionType: number = Math.floor(Math.random() * 3); ;
-
-    switch(actionType){
-      
-      case 0: 
-        return {action: 'Attack', value : -10};
-      
-      case 1:
-      return {action: 'Heal', value : 10};
-      
-      case 2:
-      return {action: 'Counter', value : 0};
-      
-      default: 
-        return 'Error';
-    }
+  randomNum(num : number){
+    return Math.floor(Math.random() * num);
   }
+  pnjAction(){
+    let actionType: number = Math.floor(Math.random() * 100); ;
 
+    if(actionType <= 50){
+      return {action: 'Attack', value : -this.randomNum(10)};
+    }
+
+    else if(actionType > 50 && actionType <= 80){
+      return {action: 'Heal', value : this.randomNum(10)};
+    }
+
+    else if(actionType > 80 && actionType <= 100) {
+      return {action: 'Counter', value : 0};
+    }
+    else{return 'Error';}
+  }
+  
   constructor() { }
 }
