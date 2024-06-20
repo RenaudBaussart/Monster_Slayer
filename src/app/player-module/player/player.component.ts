@@ -12,7 +12,6 @@ import { PlayerButtonComponent } from '../player-button/player-button.component'
 
 @Component({
   selector: 'app-player',
-  standalone: true,
   templateUrl: './player.component.html',
   styleUrl: './player.component.scss',
 })
