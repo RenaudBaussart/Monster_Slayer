@@ -2,12 +2,12 @@
     <section class="mainGrid">
         <app-combatlog class="area1"></app-combatlog>
         <div class="combat area2">
-            <app-player></app-player>
+            <app-player #player></app-player>
             <app-pnj></app-pnj>
         </div>
         <section class="area3">
-            <app-player-button
-                               class="playerButtonContainer"></app-player-button>
+            <app-player-button class="playerButtonContainer"
+                               (buttonClickedhandler)="handleButtonClick($event.toString())"></app-player-button>
         </section>
     </section>
     <router-outlet />

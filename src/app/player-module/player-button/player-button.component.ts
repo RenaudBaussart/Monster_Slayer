@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Output, EventEmitter } from '@angular/core';
 import { CombatCoreService } from '../../services/combat-core.service';
 import { DeathService } from '../../services/death.service';
 
@@ -8,21 +8,23 @@ import { DeathService } from '../../services/death.service';
   styleUrl: './player-button.component.scss',
 })
 export class PlayerButtonComponent {
+  @Output() buttonClicked = new EventEmitter<any>();
   deathService = inject(DeathService);
   combatCoreService = inject(CombatCoreService);
-  randomNum(num : number){
+
+  buttonClickedhandler(methodName: string) {
+    this.buttonClicked.emit(methodName);
+  }
+  randomNum(num: number) {
     return Math.floor(Math.random() * num);
   }
-  attack() {
-    console.log('attack');
-    this.combatCoreService.combatHandler('Attack', -this.randomNum(20));
+  attack(methodName: string) {
+    this.buttonClicked.emit(methodName);
   }
-  counter() {
-    console.log('counter');
-    this.combatCoreService.combatHandler('Counter', 0);
+  counter(methodName: string) {
+    this.buttonClicked.emit(methodName);
   }
-  heal() {
-    console.log('Heal');
-    this.combatCoreService.combatHandler('Heal', this.randomNum(20));
+  heal(methodName: string) {
+    this.buttonClicked.emit(methodName);
   }
 }

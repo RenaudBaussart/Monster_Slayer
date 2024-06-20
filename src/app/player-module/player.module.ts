@@ -13,9 +13,7 @@ import { DeathService } from '../services/death.service';
     PlayerButtonComponent,
     PlayerHealthBarComponent,
   ],
-  imports: [
-    CommonModule
-  ],
-  exports: [PlayerButtonComponent, PlayerComponent, PlayerHealthBarComponent]
+  imports: [CommonModule],
+  exports: [PlayerButtonComponent, PlayerComponent, PlayerHealthBarComponent],
 })
-export class PlayerModule { }
+export class PlayerModule {}

@@ -1,7 +1,8 @@
 <section class="buttonContainer">
-    <button (click)="attack()"
-            [disabled]="deathService.checkIfDead">Attack</button>
-    <button (click)="counter()"
-            [disabled]="deathService.checkIfDead">Counter</button>
-    <button (click)="heal()" [disabled]="deathService.checkIfDead">Heal</button>
+        <button (click)="buttonClickedhandler('attack')"
+                [disabled]="deathService.checkIfDead">Attack</button>
+        <button (click)="buttonClickedhandler('counter')"
+                [disabled]="deathService.checkIfDead">Counter</button>
+        <button (click)="buttonClickedhandler('heal')"
+                [disabled]="deathService.checkIfDead">Heal</button>
 </section>
