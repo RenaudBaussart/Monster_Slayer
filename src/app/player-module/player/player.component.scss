@@ -25,7 +25,10 @@ button {
     display: flex;
     justify-content: space-around;
     align-content: center;
-    width: 100%;
+    width: 80vw;
+    bottom: 20px;
+    right: 30px;
+    position: absolute;
 }
 
 .player-model-attack {
