@@ -1,27 +1,35 @@
-# MonsterSlayer
+### About The Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.3.
+in this project we make a small "game" with angular
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Built With
+- ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-## Code scaffolding
+- ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+ 
+- ![html](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-## Build
+- ![JS](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 
-## Running unit tests
+- ![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## direct link to pages
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contribtors
+ ![hugo](https://avatars.githubusercontent.com/u/130973430?s=64&v=4) <br/>
+ [Hugo](https://github.com/Hugo-walando)<br/>
+ ![lucas](https://avatars.githubusercontent.com/u/119311853?s=64&v=4) <br/>
+ [Lucas](https://github.com/MrLkuch)<br/>
+ ![renaud](https://avatars.githubusercontent.com/u/132342520?s=64&v=4) <br/>
+ [Renaud](https://github.com/RenaudBaussart)<br/>
 
-## Further help
+## License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Distributed under the Apache License. `LICENSE` See for more information.
