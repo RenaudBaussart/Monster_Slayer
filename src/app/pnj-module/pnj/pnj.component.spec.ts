@@ -8,7 +8,7 @@ describe('PnjComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PnjComponent]
+      declarations: [PnjComponent]
     })
     .compileComponents();
 
