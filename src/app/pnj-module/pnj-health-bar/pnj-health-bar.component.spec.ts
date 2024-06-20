@@ -8,7 +8,7 @@ describe('PnjHealthBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PnjHealthBarComponent]
+      declarations: [PnjHealthBarComponent]
     })
     .compileComponents();
 
