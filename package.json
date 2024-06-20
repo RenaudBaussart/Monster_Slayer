@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration=production --base-href=/Monster_Slayer/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:monster-slayer": "node dist/monster-slayer/server/server.mjs"
