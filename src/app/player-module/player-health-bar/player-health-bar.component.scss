@@ -1,0 +1,28 @@
+$healthbar-color: green;
+$health-texte-color: black;
+
+.healthpoint {
+    font-size: 1.5rem;
+    color: $health-texte-color;
+    text-wrap: nowrap;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.health-bar {
+    margin: 4px;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.health-bar-fill {
+    height: 100%;
+    background-color: $healthbar-color;
+    grid-area: 1 / 1 / 2 / 2;
+}
