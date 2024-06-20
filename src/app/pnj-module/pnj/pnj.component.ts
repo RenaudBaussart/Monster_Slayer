@@ -3,9 +3,7 @@ import { PnjHealthBarComponent } from '../pnj-health-bar/pnj-health-bar.componen
 
 @Component({
   selector: 'app-pnj',
-  standalone: true,
-  imports: [PnjHealthBarComponent],
   templateUrl: './pnj.component.html',
   styleUrl: './pnj.component.scss',
 })
-export class PnjComponent {}
+export class PnjComponent { }
