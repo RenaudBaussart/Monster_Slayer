@@ -1,20 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { PnjHealthBarComponent } from './components/pnj-health-bar/pnj-health-bar.component';
-import { PnjComponent } from './components/pnj/pnj.component';
 import { CombatlogComponent } from './components/combatlog/combatlog.component';
 import { PlayerModule } from './player-module/player.module';
-
+import { PnjModule } from './pnj-module/pnj.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    PnjHealthBarComponent,
-    PnjComponent,
     CombatlogComponent,
-    PlayerModule
+    PlayerModule,
+    PnjModule
 
   ],
   templateUrl: './app.component.html',
