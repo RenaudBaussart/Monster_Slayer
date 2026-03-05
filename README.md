@@ -20,7 +20,7 @@ in this project we make a small "game" with angular
 - ![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
 ## direct link to the pages
-[monsterSlayer](https://monster-slayer-djjg.onrender.com/)
+[monsterSlayer](https://monster-slayer-djjg.onrender.com/) Changer le zoom de la page en fonction de l'ecran
 
 ## Contribtors
  ![hugo](https://avatars.githubusercontent.com/u/130973430?s=64&v=4) <br/>
